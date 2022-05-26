@@ -1,1 +1,1 @@
-# duaneking.github.io is github.duanefking.com
+# duaneking.github.io
