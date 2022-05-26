@@ -8,7 +8,7 @@ I just rediscovered this wonderful thing and plan to make updates as I can if me
 
 ### Mermaid?
 
-The First checkin should be useful. Lets test if this renders well.
+A checkin should be useful. Lets test if this renders well.
 
 ```mermaid
   graph TD;
@@ -17,11 +17,3 @@ The First checkin should be useful. Lets test if this renders well.
       B-->D;
       C-->D;
 ```
-
-<div class="mermaid">
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-</div>
