@@ -4,11 +4,11 @@ mermaid: true
 
 ## Welcome to duaneking.github.io
 
-I just rediscovered this wonderful thing and plan to make updates as I can if mermaid is supported as that for me is the killer app.
+I just rediscovered this thing and hoped  to make updates as I can if mermaid is supported as that for me is the killer app.  Thing is, Mermaid does not work and I feel lied to by gh.
 
 ### Mermaid?
 
-A checkin should be useful. Lets test if this renders well.
+Lets test if this renders.
 
 ```mermaid
   graph TD;
@@ -18,3 +18,6 @@ A checkin should be useful. Lets test if this renders well.
       C-->D;
 ```
 
+{% if page.mermaid %}
+  {% include mermaid.html %}
+{% endif %}
