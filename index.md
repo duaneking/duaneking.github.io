@@ -6,7 +6,7 @@ I just rediscovered this wonderful thing and plan to make updates as I can if me
 
 The First checkin should be useful. Lets test if this renders well.
 
-```mermaid
+```mmd
   graph TD;
       A-->B;
       A-->C;
