@@ -17,3 +17,6 @@ Lets test if this renders.
       B-->D;
       C-->D;
 ```
+
+
+{% include mermaid.html %}
