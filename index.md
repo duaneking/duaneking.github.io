@@ -17,3 +17,11 @@ The First checkin should be useful. Lets test if this renders well.
       B-->D;
       C-->D;
 ```
+
+<div class="mermaid">
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+</div>
