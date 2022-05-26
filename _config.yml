@@ -1,3 +1,11 @@
-theme: jekyll-theme-hacker
-title: Duane's homepage
+title: Duane F. King
+github_username:  duaneking
 description: Bookmark this to keep an eye on my project updates!
+theme: jekyll-theme-hacker
+baseurl: ""
+url: ""
+plugins:
+  - jekyll-feed
+exclude:
+  - .env
+  - .gitignore
