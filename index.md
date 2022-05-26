@@ -17,7 +17,3 @@ Lets test if this renders.
       B-->D;
       C-->D;
 ```
-
-{% if page.mermaid %}
-  {% include mermaid.html %}
-{% endif %}
