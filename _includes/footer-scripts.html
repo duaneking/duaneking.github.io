@@ -1,3 +1,11 @@
+<!-- include/footer-scripts.html start -->
+
 {% if page.mermaid %}
-  {% include mermaid.html %}
+	<!-- mermaidJS render start -->
+      {% include mermaid.html %}
+	<!-- mermaidJS render end -->
+{% else %}
+	<!-- mermaidJS not rendered: !mermaid -->
 {% endif %}
+
+<!-- includes/footer-scripts.html end -->

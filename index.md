@@ -8,7 +8,7 @@ I just rediscovered this thing and hoped  to make updates as I can if mermaid is
 
 ### Mermaid?
 
-Lets test if this renders.
+I just want this mermaidjs to render without me needing to edit *.md files in a special way. I just want *.md files to render mermaidJS on gh-pages just like it should on gh without having to make any modifications to the file for either. That to me is the most accessable.
 
 ```mermaid
   graph TD;
@@ -17,6 +17,4 @@ Lets test if this renders.
       B-->D;
       C-->D;
 ```
-
-
-{% include mermaid.html %}
+Bottom of index.md
