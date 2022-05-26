@@ -1,7 +1,5 @@
 ---
 mermaid: true
-layout: default
-title: Home
 ---
 
 ## Welcome to duaneking.github.io
