@@ -33,9 +33,23 @@ var loadCode = function(url, callback, location){
     scriptTag.onload = callback;
     scriptTag.onreadystatechange = callback;
 
-    console.log('Injecting script tag: '+ scriptTag);
+    console.log('Injecting script tag: '+ scriptTag.src);
 
     location.appendChild(scriptTag);
+};
+
+/*
+ * Add raw code.
+ */
+var loadScript = function(url, location){
+	var scriptTag = document.createElement('script');
+	scriptTag.src = url;
+	scriptTag.type = "application/javascript";
+	scriptTag.defer = true;
+
+	console.log('Injecting script tag: '+ scriptTag.src);
+
+	location.appendChild(scriptTag);
 };
 
 /*
@@ -56,6 +70,7 @@ var initMermaidJS = function() {
 
 		// The default GH-Pages render pipeline currupts our tags.
 		// So we manually look for the 'language-mermaid' currupted tags and render them.
+		// If this call is made in the browser in the console it renders,  but this line being here is not making it render
 		window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
 
 		console.log('End attempt at mermaidJS init.');
@@ -83,8 +98,17 @@ if( mermaidsExist ) {
       * Inject the mermaid library into the DOM and trigger init.
       */
 	loadCode('https://unpkg.com/mermaid@9.1.1/dist/mermaid.min.js', initMermaidJS, head);
+
+	/* Test redundant call with new debugging */
+	document.addEventListener("DOMContentLoaded", function(event) {
+		mermaid.initialize({ startOnLoad:true, theme: 'dark' });
+		window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+	});
 }
 
+
+
 </script>
+
 
 <!-- includes/head-custom.html end -->
