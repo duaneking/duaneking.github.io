@@ -1,11 +1,59 @@
 <!-- includes/head-custom.html start -->
 
-{% if page.mermaid %}
-	<!-- mermaidJS render start -->
-      {% include mermaid.html %}
-	<!-- mermaidJS render end -->
-{% else %}
-	<!-- mermaidJS not rendered: !mermaid -->
-{% endif %}
+<script>
+
+/*
+ * Not every browser is sane.
+ *
+ * Lets assure we have String.Prototype.includes
+ */
+if (!String.prototype.includes) {
+  String.prototype.includes = function(search, start) {
+    'use strict';
+    if (typeof start !== 'number') {
+      start = 0;
+    }
+
+    if (start + search.length > this.length) {
+      return false;
+    } else {
+      return this.indexOf(search, start) !== -1;
+    }
+  };
+}
+
+/*
+ * Add raw code.
+ */
+var loadCode = function(url, callback, location){
+    var scriptTag = document.createElement('script');
+    scriptTag.src = url;
+
+    scriptTag.onload = callback;
+    scriptTag.onreadystatechange = callback;
+
+    location.appendChild(scriptTag);
+};
+
+/* Hold my beer and watch this. */
+var generatedSource = new XMLSerializer().serializeToString(document);
+
+var initMermaidJS = function() {
+	document.addEventListener("DOMContentLoaded", function(event) {
+		mermaid.initialize({
+			startOnLoad:true,
+			theme: 'dark'
+		});
+		window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+	});
+}
+
+if( generatedSource.includes("language-mermaid") ) {
+	var head = document.getElementsByTagName('head')[0];
+
+	loadCode('https://unpkg.com/mermaid@9.1.1/dist/mermaid.min.js', initMermaidJS, head);
+}
+
+</script>
 
 <!-- includes/head-custom.html end -->
