@@ -14,7 +14,7 @@ Every rendering pipeline wants a different rendering tag, because they are dumb 
 
 Github wants ```mermaid.
 
-Github Pages forces <code-lang="mermaid"> and thats so broken on its own.
+Github Pages forces <code class="language-mermaid"> and thats so broken on its own becouse it activly currupts whats displayed there first, so its not even real mermaidJS by that point, its currupted.
 
 Every plugin I have seen wants something different, because they are dumb, and dont undersand that a universal tag is critical.
 
