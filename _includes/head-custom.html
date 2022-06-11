@@ -70,12 +70,11 @@ var initMermaidJS = function() {
 
 		// The default GH-Pages render pipeline currupts our tags.
 		// So we manually look for the 'language-mermaid' currupted tags and render them.
-		// If this call is made in the browser in the console it renders,  but this line being here is not making it render
+		// If this call is made in the browser in the console it renders,  but this line being here is not making it render	
 		window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
 
 		console.log('End attempt at mermaidJS init.');
 	});
-
 }
 
 /*
@@ -101,7 +100,7 @@ if( mermaidsExist ) {
 
 	/* Test redundant call with new debugging */
 	document.addEventListener("DOMContentLoaded", function(event) {
-		window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+		// window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
 	});
 }
 
