@@ -27,30 +27,61 @@ if (!String.prototype.includes) {
  */
 var loadCode = function(url, callback, location){
     var scriptTag = document.createElement('script');
+
     scriptTag.src = url;
 
     scriptTag.onload = callback;
     scriptTag.onreadystatechange = callback;
 
+    console.log('Injecting script tag: '+ scriptTag);
+
     location.appendChild(scriptTag);
 };
 
-/* Hold my beer and watch this. */
-var generatedSource = new XMLSerializer().serializeToString(document);
-
+/*
+ * Initialize MermaidJS by manually adding an event listener.
+ *
+ * This runs after the script loads and watches for the page to load so it will render.
+ */
 var initMermaidJS = function() {
+
 	document.addEventListener("DOMContentLoaded", function(event) {
+		console.log('DOM fully loaded. Attempting mermaidJS init.');
+		
+		// Standard Mermaid Init
 		mermaid.initialize({
 			startOnLoad:true,
 			theme: 'dark'
 		});
+
+		// The default GH-Pages render pipeline currupts our tags.
+		// So we manually look for the 'language-mermaid' currupted tags and render them.
 		window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+
+		console.log('End attempt at mermaidJS init.');
 	});
+
 }
 
-if( generatedSource.includes("language-mermaid") ) {
+/*
+ * Hold my beer and watch this..
+ * 	- https://github.com/duaneking
+ */
+var generatedSource = new XMLSerializer().serializeToString(document);
+var mermaidsExist = generatedSource.includes("language-mermaid")
+
+console.log('Mermaids Exist: ' + mermaidsExist);
+
+/*
+ * Once again, look for the currupted language-mermaid tags that tell us this client page has been
+ * rendered using the broken default GH Pages pipeline that does not respect mermaidJS by default.
+ */
+if( mermaidsExist ) {
 	var head = document.getElementsByTagName('head')[0];
 
+	/*
+      * Inject the mermaid library into the DOM and trigger init.
+      */
 	loadCode('https://unpkg.com/mermaid@9.1.1/dist/mermaid.min.js', initMermaidJS, head);
 }
 
