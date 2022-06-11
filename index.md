@@ -1,7 +1,3 @@
----
-mermaid: true
----
-
 ## Welcome to duaneking.github.io
 
 Earlier in the year I rediscovered this thing and wanted to make updates with mermaidJS supported as part of the default pipeline, as that for me is the killer blogging and education app that would let me really explore my writing.
