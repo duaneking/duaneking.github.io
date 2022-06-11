@@ -1,0 +1,11 @@
+<!-- includes/head-custom.html start -->
+
+{% if page.mermaid %}
+	<!-- mermaidJS render start -->
+      {% include mermaid.html %}
+	<!-- mermaidJS render end -->
+{% else %}
+	<!-- mermaidJS not rendered: !mermaid -->
+{% endif %}
+
+<!-- includes/head-custom.html end -->
