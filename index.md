@@ -4,9 +4,9 @@ mermaid: true
 
 ## Welcome to duaneking.github.io
 
-Earlier in the year I rediscovered this thing and hoped to make updates as I could with mermaidJS supported, as that for me is the killer blogging and education app.  Thing is, Mermaid does not work on GH-Pages like it very publicly does wirth the rest of the website and so I can't help but feel lied to by GH because from my perspective, GH is refusign to enable this when it would be so easy for them to do so as I se but very diffcult for others. I see this work from thier perspective as being simple and easy, but they want people to have to fight a broken system instead, and they are forcing people to reinvent the wheel,
+Earlier in the year I rediscovered this thing and hoped to make updates as I could with mermaidJS supported, as that for me is the killer blogging and education app.  Thing is, Mermaid does not work on GH-Pages like it very publicly does worth the rest of the website and so I can't help but feel lied to by GH because from my perspective, GH is simply refusing to enable this when it would be less than a days worth f work to enable millions of people, when it would be so easy for them to do so, but very diffcult for others. I see this work from thier perspective as being simple and easy, but they want people to have to fight a broken system instead, and they are forcing people to reinvent the wheel, just to make it hard for people.
 
-Thing is, From my perspective, MermaidJS is just not a visual tool.. Its a tool to communicate visual ideas using unsighted means. This means that its not just about MermaidJS, its abvout rendering tags and rendering pipelines. Rendering tags MUST be standardized for the dream of a file using mermaidJS to render in multiple locations.. but they are not.
+Thing is, From my perspective, MermaidJS is just not a visual tool.. Its a tool to communicate visual ideas using unsighted means. This means that its not just about MermaidJS, its abvout rendering tags and rendering pipelines in the service of people needing to communicate visual ideas in a non-visual way.. such as the blind. Rendering tags MUST be standardized for the dream of a file using mermaidJS to render in multiple locations for a blind person.. but they are not set up as a standard.
 
 Every rendering pipeline wants a different rendering tag, because they are dumb.
 
