@@ -101,7 +101,6 @@ if( mermaidsExist ) {
 
 	/* Test redundant call with new debugging */
 	document.addEventListener("DOMContentLoaded", function(event) {
-		mermaid.initialize({ startOnLoad:true, theme: 'dark' });
 		window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
 	});
 }
