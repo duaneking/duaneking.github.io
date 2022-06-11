@@ -59,7 +59,7 @@ var loadScript = function(url, location){
  */
 var initMermaidJS = function() {
 
-	document.addEventListener("DOMContentLoaded", function(event) {
+	// document.addEventListener("DOMContentLoaded", function(event) {
 		console.log('DOM fully loaded. Attempting mermaidJS init.');
 		
 		// Standard Mermaid Init
@@ -74,7 +74,7 @@ var initMermaidJS = function() {
 		window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
 
 		console.log('End attempt at mermaidJS init.');
-	});
+	// });
 }
 
 /*
