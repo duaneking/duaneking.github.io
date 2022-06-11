@@ -38,7 +38,7 @@ In fact on this page the client is what checks for mermaid diagrams, and if merm
 
 So I reported it to GitHub Support; they closed the defect and said to use a plugin that makes you do EVEN MORE WORK, that currupts your file formats even more, making it even harder to get this working, and STILL would require edits to pages based in the platform.. because its not supported and uses a different tag syntax than the default github syntax.
 
-Github said what I got workiong today was not possible. I did it anyway. I'm just not happy with my solution because I know its sub-optimal and does not support accessability in the way I really want to.
+Github said what I got working today was not possible. I did it anyway. I'm just not happy with my solution because I know its sub-optimal and does not support accessability in the way I really want to.
 
 ### Mermaid?
 
