@@ -58,23 +58,16 @@ var loadScript = function(url, location){
  * This runs after the script loads and watches for the page to load so it will render.
  */
 var initMermaidJS = function() {
+	console.log('DOM fully loaded. Attempting mermaidJS init.');
 
-	// document.addEventListener("DOMContentLoaded", function(event) {
-		console.log('DOM fully loaded. Attempting mermaidJS init.');
-		
-		// Standard Mermaid Init
-		mermaid.initialize({
-			startOnLoad:true,
-			theme: 'dark'
-		});
+	// Standard Mermaid Init
+	mermaid.initialize({ startOnLoad:true, theme: 'dark' });
 
-		// The default GH-Pages render pipeline currupts our tags.
-		// So we manually look for the 'language-mermaid' currupted tags and render them.
-		// If this call is made in the browser in the console it renders,  but this line being here is not making it render	
-		window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+	// The default GH-Pages render pipeline currupts our tags.
+	// So we manually look for the 'language-mermaid' currupted tags and render them.
+	window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
 
-		console.log('End attempt at mermaidJS init.');
-	// });
+	console.log('End attempt at mermaidJS init.');
 }
 
 /*
@@ -94,19 +87,11 @@ if( mermaidsExist ) {
 	var head = document.getElementsByTagName('head')[0];
 
 	/*
-      * Inject the mermaid library into the DOM and trigger init.
-      */
+       * Inject the mermaid library into the DOM and trigger init.
+       */
 	loadCode('https://unpkg.com/mermaid@9.1.1/dist/mermaid.min.js', initMermaidJS, head);
-
-	/* Test redundant call with new debugging */
-	document.addEventListener("DOMContentLoaded", function(event) {
-		// window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
-	});
 }
 
-
-
 </script>
-
 
 <!-- includes/head-custom.html end -->
