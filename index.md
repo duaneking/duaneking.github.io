@@ -1,15 +1,5 @@
 ## Welcome to duaneking.GitHub.io
 
-# Posts
-<ul>
- {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      <p>{{ post.description }}</p>
-    </li>
-  {% endfor %}
- </ul>
-
 ## It Works.
 I got MermaidJS working.
 
