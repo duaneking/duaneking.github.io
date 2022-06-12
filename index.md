@@ -1,14 +1,4 @@
 ## Welcome to duaneking.GitHub.io
-  
-# Pages
-<ul>
-  {% for post in site.page %}
-    <li>
-      <a href="{{ page.permalink }}">{{ page.title }}</a>
-      <p>{{ page.description }}</p>
-    </li>
-  {% endfor %}
-</ul>
 
 # Posts
 <ul>
