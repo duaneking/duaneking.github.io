@@ -10,7 +10,7 @@ If you need to find something, search here.
 <ol>
 {% assign items = cat.items | sort: 'order' %}
 {% for item in items %}
-<li><a href="{{ item.url }}">Item: {{ item.title }}</a></li>
+<li><a href="{{ item.url }}">{{ item.title }}</a></li>
 {% endfor %}
 </ol>
 {% endfor %}
@@ -19,11 +19,11 @@ If you need to find something, search here.
 # Site Pages by category.
 
 {% assign mydocs = site.pages | group_by: 'category' %}
-{% for cat in mydocs %}
+{% for cat in mydocs | where_exp: "cat", "cat.name" %}
 <h2>Category: {{ cat.name | capitalize }}</h2>
 <ol>
 {% assign items = cat.items | sort: 'order' %}
-{% for item in items %}
+{% for item in items | where_exp: "item", "item.title" | where_exp: "item", "item.url" | %}
 <li><a href="{{ item.url }}">Item: {{ item.title }}</a></li>
 {% endfor %}
 </ol>
@@ -34,7 +34,7 @@ If you need to find something, search here.
 
 {% for page in site.pages %}
 <section id="{{ page.id }}">
-<a href="{{ page.permalink }}" class="btn"><span class="icon"></span>{{ page.name }}</a>
+<a href="{{ page.url }}" class="btn"><span class="icon"></span>{{ page.name }}</a>
 </section>
 {% endfor %}
 
