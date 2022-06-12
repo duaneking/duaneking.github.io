@@ -2,17 +2,17 @@
 
 Earlier in the year I rediscovered this thing and wanted to make updates with mermaidJS supported as part of the default pipeline, as that for me is the killer blogging and education app that would let me really explore my writing.
 
-Problem: Mermaid does not work on GH-Pages like it very publicly does with the rest of the website by default.  This is intentional, as confirmed by GH Support, who did not care about the accessability issues this creates. My perspective is that GH is simply refusing to enable this when it would be less than a days worth of work to enable millions of people this access, as shown by the timestamps in this repo and my own work, when it would be so easy for them to do so and very diffcult for many others.
+Problem: Mermaid does not work on GH-Pages like it very publicly does with the rest of the website by default.  This is intentional, as confirmed by GH Support, who did not care about the accessibility issues this creates. My perspective is that GH is simply refusing to enable this when it would be less than a days worth of work to enable millions of people this access, as shown by the timestamps in this repo and my own work, when it would be so easy for them to do so and very difficult for many others.
 
 I also don't see this solution as optimal; Its a hack that needed to be done to get it working because the server side rendering pipeine of GitHub Pages is utterly broken by design.
 
-I see this work from thier perspective as being simple and easy. I have done it here.  They are forcing people to reinvent the wheel, and wont explain why despite the many bugs tracking thsi issue filed by the community.
+I see this work from their perspective as being simple and easy. I have done it here.  They are forcing people to reinvent the wheel, and wont explain why despite the many bugs tracking this issue filed by the community.
 
-Thing is, From my perspective, MermaidJS is just not a visual tool.. Its a tool to communicate visual ideas using unsighted means. This means that its not just about MermaidJS, its about rendering tags and rendering pipelines in the service of people needing to communicate visual ideas in a non-visual way.. such as the blind. MermaidJS is the perfect tool for a blind person to communicate visual ideas to a sighted person. This makes this access so much more important. Rendering tags MUST be standardized for the dream of a file using mermaidJS to render in multiple locations for a blind person.. but they are not set up as a standard.
+Thing is, From my perspective, MermaidJS is just not a visual tool.. Its a tool to communicate visual ideas. This means that its not just about MermaidJS, its about rendering tags and rendering pipelines in the service of people needing to communicate visual ideas. MermaidJS is the perfect tool for a person to communicate visual ideas. This makes this access so much more important. Rendering tags MUST be standardized for the dream of a file using mermaidJS to render in multiple locations for a blind person.. but they are not set up as a standard.
 
 Every rendering pipeline wants a different rendering tag, because they not at all thinking about the users.
 
-Github wants ```mermaid and IMHO thats simple and works here as you can see below.
+Github wants &#126;&#126;&#126;mermaid and IMHO thats simple and works here as you can see below.
 
 But Github Pages forces &#60;pre&#62;&#60;code class="language-mermaid"&#62; and thats so broken on its own becouse it activly currupts whats displayed there first and then activly tells the browser not to try, so its not even real mermaidJS by that point, its currupted and clearly intentionally non-functional from my perspective. I shouldnt have to manually update the DOM to get it to render.
 
