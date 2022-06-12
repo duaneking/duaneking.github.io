@@ -1,6 +1,3 @@
----
-layout: default
----
 ## Welcome to duaneking.GitHub.io
 
 ## It Works.
