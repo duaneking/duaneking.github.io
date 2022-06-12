@@ -39,6 +39,18 @@ var loadCode = function(url, callback, location){
 };
 
 /*
+ * This code is a hack that can only be fixed by GitHub on the server side in the default GitHub Pages rendering pipeline.
+ */
+function do_mermaids_exist() {
+	var generatedSource = new XMLSerializer().serializeToString(document); // Yes. I dislike this, too.
+	var mermaidsExist = generatedSource.includes("language-mermaid"); // Find the corrupted tags that show a mermaidJS tag was rendered by broken GH-P.
+
+	console.log('Mermaids Exist: ' + mermaidsExist);
+
+	return mermaidsExist;
+}
+
+/*
  * Initialize MermaidJS by manually adding an event listener.
  *
  * This runs after the script loads and watches for the page to load so it will render.
@@ -46,35 +58,25 @@ var loadCode = function(url, callback, location){
 var initMermaidJS = function() {
 	console.log('DOM fully loaded. Attempting mermaidJS init.');
 
-	// Standard Mermaid Init
+	// Standard Mermaid Initialization.
 	mermaid.initialize({ startOnLoad:true, theme: 'dark' });
 
-	// The default GH-Pages render pipeline currupts our tags.
-	// So we manually look for the 'language-mermaid' currupted tags and render them.
+	// The default GH-Pages render pipeline corrupts our tags.
+	// So we manually look for the 'language-mermaid' corrupted tags and render them.
 	window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
 
 	console.log('End attempt at mermaidJS init.');
 }
 
 /*
- * Hold my beer and watch this..
- * 	- https://github.com/duaneking
+ * If mermaids are bound by a DOM...
  */
-var generatedSource = new XMLSerializer().serializeToString(document);
-var mermaidsExist = generatedSource.includes("language-mermaid")
-
-console.log('Mermaids Exist: ' + mermaidsExist);
-
-/*
- * Once again, look for the currupted language-mermaid tags that tell us this client page has been
- * rendered using the broken default GH Pages pipeline that does not respect mermaidJS by default.
- */
-if( mermaidsExist ) {
+if( do_mermaids_exist() ) {
 	var head = document.getElementsByTagName('head')[0];
 
 	/*
-       * Inject the mermaid library into the DOM and trigger init.
-       */
+     * ... inject the mermaid library and trigger initialization to ask them to build the diagrams.
+     */
 	loadCode('https://unpkg.com/mermaid@9.1.1/dist/mermaid.min.js', initMermaidJS, head);
 }
 
