@@ -31,9 +31,20 @@
 # Site Pages
 
 	{% for post in site.pages %}
-      	<a href="{{ page.permalink }}">{{ page.title }}</a>
+		<a href="{{ page.permalink }}">{{ page.title }}</a>
       	<p>{{ page.description }}</p>
         	<section id="{{ post.id }}">
           		<a href="{{ page.permalink }}" class="btn"><span class="icon"></span>{{ site.name }}</a>
         	</section>
 	{% endfor %}
+
+# Site Posts
+
+<ul>
+ {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <p>{{ post.description }}</p>
+    </li>
+  {% endfor %}
+</ul>
