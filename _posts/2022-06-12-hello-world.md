@@ -1,6 +1,8 @@
 ---
 layout: post
 title:  "Hello World"
+date: 2022-06-12 10:45:25 -0700
+categories: test mermaid
 ---
 
 # Welcome

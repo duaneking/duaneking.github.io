@@ -1,5 +1,14 @@
 ## Welcome to duaneking.GitHub.io
 
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+## It Works.
 I got MermaidJS working.
 
 My only option with the default pipeline for GitHub Pages is to allow GitHub to corrupt my input data, render it slightly incorrectly, and then in your browser fix it by hand-patching the DOM via JS.
