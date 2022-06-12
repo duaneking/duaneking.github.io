@@ -6,13 +6,13 @@ If you need to find something, search here.
 
 {% assign mydocs = site.docs | group_by: 'category' %}
 {% for cat in mydocs %}
-<h2> {{ cat.name | capitalize }} </h2>
-<ul>
+<h2>Category: {{ cat.name | capitalize }} </h2>
+<ol>
 {% assign items = cat.items | sort: 'order' %}
 {% for item in items %}
-<li><a href="{{ item.url }}">{{ item.title }}</a></li>
+<li><a href="{{ item.url }}">Item: {{ item.title }}</a></li>
 {% endfor %}
-</ul>
+</ol>
 {% endfor %}
 
 
@@ -20,33 +20,31 @@ If you need to find something, search here.
 
 {% assign mydocs = site.pages | group_by: 'category' %}
 {% for cat in mydocs %}
-<h2>{{ cat.name | capitalize }}</h2>
-<ul>
+<h2>Category: {{ cat.name | capitalize }}</h2>
+<ol>
 {% assign items = cat.items | sort: 'order' %}
 {% for item in items %}
-<li><a href="{{ item.url }}">{{ item.title }}</a></li>
+<li><a href="{{ item.url }}">Item: {{ item.title }}</a></li>
 {% endfor %}
-</ul>
+</ol>
 {% endfor %}
 
 
 # Site Pages
 
-{% for post in site.pages %}
-<a href="{{ page.permalink }}">{{ page.title }}</a>
-<p>{{ page.description }}</p>
-<section id="{{ post.id }}">
-<a href="{{ page.permalink }}" class="btn"><span class="icon"></span>{{ site.name }}</a>
+{% for page in site.pages %}
+<section id="{{ page.id }}">
+<a href="{{ page.permalink }}" class="btn"><span class="icon"></span>{{ page.name }}</a>
 </section>
 {% endfor %}
 
 # Site Posts
 
-<ul>
+<ol>
 {% for post in site.posts %}
 <li>
 <a href="{{ post.url }}">{{ post.title }}</a>
 <p>{{ post.description }}</p>
 </li>
 {% endfor %}
-</ul>
+</ol>
