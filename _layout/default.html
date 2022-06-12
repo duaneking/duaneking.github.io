@@ -22,45 +22,6 @@
         <section id="downloads">
           <a href="{{ site.github.repository_url }}" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
         </section>
-
-</hr>
-
-# Test 1
-
-	{% assign mydocs = site.docs | group_by: 'category' %}
-	{% for cat in mydocs %}
-	<h2>{{ cat.name | capitalize }}</h2>
-	<ul>
-      	{% assign items = cat.items | sort: 'order' %}
-      	{% for item in items %}
-      		<li><a href="{{ item.url }}">{{ item.title }}</a></li>
-      	{% endfor %}
-	</ul>
-	{% endfor %}
-</hr>
-
-# Test 2
-	{% assign mydocs = site.pages | group_by: 'category' %}
-	{% for cat in mydocs %}
-	<h2>{{ cat.name | capitalize }}</h2>
-	<ul>
-      	{% assign items = cat.items | sort: 'order' %}
-      	{% for item in items %}
-      		<li><a href="{{ item.url }}">{{ item.title }}</a></li>
-      	{% endfor %}
-	</ul>
-	{% endfor %}
-</hr>
-
-# Test 3
-	{% for post in site.pages %}
-      	<a href="{{ page.permalink }}">{{ page.title }}</a>
-      	<p>{{ page.description }}</p>
-        	<section id="{{ post.id }}">
-          		<a href="{{ page.permalink }}" class="btn"><span class="icon"></span>{{ site.name }}</a>
-        	</section>
-	{% endfor %}
-
       </div>
     </header>
 
