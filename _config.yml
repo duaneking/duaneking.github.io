@@ -6,6 +6,7 @@ baseurl: ""
 url: ""
 plugins:
   - jekyll-feed
+  - jekyll-optional-front-matter 
 exclude:
   - .env
   - .gitignore
