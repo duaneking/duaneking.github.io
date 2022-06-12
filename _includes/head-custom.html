@@ -5,7 +5,7 @@
 /*
  * Not every browser is sane.
  *
- * Lets assure we have String.Prototype.includes
+ * Lets assure we have String.Prototype.includes and patch it as needed.
  */
 if (!String.prototype.includes) {
   String.prototype.includes = function(search, start) {
@@ -23,7 +23,9 @@ if (!String.prototype.includes) {
 }
 
 /*
- * Add raw code.
+ * Add raw code to DOM from remote CDN...
+ * Triggers a callback when the script is loaded into the DOM and can be used.
+ * Appends child node on location used.
  */
 var loadCode = function(url, callback, location){
     var scriptTag = document.createElement('script');
@@ -42,7 +44,7 @@ var loadCode = function(url, callback, location){
  * This code is a hack that can only be fixed by GitHub on the server side in the default GitHub Pages rendering pipeline.
  */
 function do_mermaids_exist() {
-	var generatedSource = new XMLSerializer().serializeToString(document); // Yes. I dislike this, too.
+	var generatedSource = new XMLSerializer().serializeToString(document); // Yes, I know... I dislike this for perf reasons. But it works client side.
 	var mermaidsExist = generatedSource.includes("language-mermaid"); // Find the corrupted tags that show a mermaidJS tag was rendered by broken GH-P.
 
 	console.log('Mermaids Exist: ' + mermaidsExist);
@@ -74,7 +76,7 @@ var initMermaidJS = function() {
 if( do_mermaids_exist() ) {
 	var head = document.getElementsByTagName('head')[0];
 
-	/*
+    /*
      * ... inject the mermaid library and trigger initialization to ask them to build the diagrams.
      */
 	loadCode('https://unpkg.com/mermaid@9.1.1/dist/mermaid.min.js', initMermaidJS, head);
