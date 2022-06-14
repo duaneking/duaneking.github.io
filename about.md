@@ -1,22 +1,12 @@
 # About
 
-If you need to find something, search here.
+A picture is worth a thousand words.  Here is a flowchart I wrote in text.
 
-# Site Pages
+```mermaid
+flowchart LR
 
-{% for page in site.pages %}
-<section id="{{ page.id }}">
-<a href="{{ page.url }}" class="btn"><span class="icon"></span>{{ page.name }}</a>
-</section>
-{% endfor %}
+duanefking.com --> www.duanefking.com
+www.duanefking.com --> github.duanefking.com
+github.duanefking.com --> www.duanefking.com
+```
 
-# Site Posts
-
-<ol>
-{% for post in site.posts %}
-<li>
-<a href="{{ post.url }}">{{ post.title }}</a>
-<p>{{ post.description }}</p>
-</li>
-{% endfor %}
-</ol>
