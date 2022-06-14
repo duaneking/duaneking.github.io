@@ -1,4 +1,7 @@
 {% for page in site.pages | where_exp: "page", "page.title != ''" %}
+{% if page.name contains ".md" %}
+
 <a href="{{ page.url }}" class="btn"><span class="icon"></span>{{ page.name }}</a>
 
+{% endif %}
 {% endfor %}
