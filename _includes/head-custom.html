@@ -47,7 +47,7 @@ var loadCode = function(url, callback, location){
  * This code is a hack that can only be fixed by GitHub on the server side in the default GitHub Pages rendering pipeline.
  */
 function do_mermaids_exist() {
-	var generatedSource = new XMLSerializer().serializeToString(document); // Yes, I know... I dislike this for perf reasons. But it works client side.
+	var generatedSource = new XMLSerializer().serializeToString(document.body); // Yes, I know... I dislike this for perf reasons. But it works client side.
 	var mermaidsExist = generatedSource.includes("language-mermaid"); // Find the tags that show a mermaidJS div was found.
 
 	console.log('Mermaids Exist: ' + mermaidsExist);
