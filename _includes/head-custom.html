@@ -70,7 +70,7 @@ var initMermaidJS = function() {
 		element = element.parentElement;
 	}
 	
-	console.log('Detected broken GitHub Pages mermaid tag. Updating DOM to inject "div class=mermaid".');
+	console.log('Detected broken GitHub Pages mermaid tag. Updating DOM to inject parent mermaid classed div.');
 	
 	element.outerHTML = `<div class="mermaid">${element.textContent}</div>`;
 	});
