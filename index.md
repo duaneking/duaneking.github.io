@@ -5,8 +5,6 @@ I got MermaidJS working.  Now I'm working on optimizing things.
 
 My only option with the default pipeline for GitHub Pages is to allow GitHub to corrupt my input data, render it slightly incorrectly, and then in your browser fix it by hand-patching the DOM via JS.  That works.
 
-It really should be a server side thing as part of the default GitHub pages rendering pipeline.  I should not have to make a template specific override.
-
 I'm just not happy with my solution because I know its sub-optimal and does not support accessibility in the way I really want to; I just don't know of a way to add this support if GitHub itself wont commit to it.
 
 ### Mermaid?
