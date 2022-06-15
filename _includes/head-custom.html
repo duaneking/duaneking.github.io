@@ -48,9 +48,10 @@ var loadCode = function(url, callback, location){
  */
 function do_mermaids_exist() {
 	var generatedSource = new XMLSerializer().serializeToString(document); // Yes, I know... I dislike this for perf reasons. But it works client side.
-	var mermaidsExist = generatedSource.includes("class=\"language-mermaid"); // Find the corrupted tags that show a mermaidJS tag was rendered by broken GH-P.
+	var mermaidsExist = generatedSource.includes("language-mermaid"); // Find the tags that show a mermaidJS div was found.
 
 	console.log('Mermaids Exist: ' + mermaidsExist);
+	console.log('Source: ' + generatedSource);
 
 	return mermaidsExist;
 }
