@@ -63,6 +63,8 @@ function do_mermaids_exist() {
 var initMermaidJS = function() {
 	console.log('DOM fully loaded.');
 
+	// The default GH-Pages render pipeline corrupts our tags.
+	// So we manually look for the 'language-mermaid' corrupted tags and inject the correct class.
 	document.querySelectorAll("pre.mermaid, pre>code.language-mermaid").forEach( element => {
 	if (element.tagName === "CODE"){
 		element = element.parentElement;
@@ -77,11 +79,6 @@ var initMermaidJS = function() {
 
 	// Standard Mermaid Initialization.
 	mermaid.initialize({ startOnLoad:true, theme: 'dark', htmlLabels: false, securityLevel: 'loose' });
-
-	// The default GH-Pages render pipeline corrupts our tags.
-	// So we manually look for the 'language-mermaid' corrupted tags and render them.	
-	// If all goes well, our next deploy can remove this.
-	// window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
 
 	console.log('End attempt at mermaidJS initialization.');
 }
