@@ -58,7 +58,22 @@ function do_mermaids_exist() {
  * This runs after the script loads and watches for the page to load so it will render.
  */
 var initMermaidJS = function() {
-	console.log('DOM fully loaded. Attempting mermaidJS init.');
+	console.log('DOM fully loaded.');
+
+	document.querySelectorAll("pre.mermaid, pre>code.language-mermaid").forEach( element => {
+	if (element.tagName === "CODE"){
+		console.log('CODE Tag Element detected.');
+		element = element.parentElement;
+	}else{
+		console.log("element: " + element.tagName);
+	}
+
+	element.outerHTML = `<div class="mermaid">${element.textContent}</div>`;
+
+	});
+
+
+	console.log('Attempting mermaidJS init.');
 
 	// Standard Mermaid Initialization.
 	mermaid.initialize({ startOnLoad:true, theme: 'dark', htmlLabels: false, securityLevel: 'loose' });
