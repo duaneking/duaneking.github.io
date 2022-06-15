@@ -1,7 +1,10 @@
 <!-- includes/head-custom.html start -->
 
 <script>
-
+/*
+ * This file is intentionally not minimized as that makes it very hard to learn from with a screen reader.
+ */
+ 
 /*
  * Not every browser is sane.
  *
@@ -62,27 +65,25 @@ var initMermaidJS = function() {
 
 	document.querySelectorAll("pre.mermaid, pre>code.language-mermaid").forEach( element => {
 	if (element.tagName === "CODE"){
-		console.log('CODE Tag Element detected.');
 		element = element.parentElement;
-	}else{
-		console.log("element: " + element.tagName);
 	}
-
+	
+	console.log('Detected broken GitHub Pages mermaid tag. Updating DOM to inject "div class=mermaid".');
+	
 	element.outerHTML = `<div class="mermaid">${element.textContent}</div>`;
-
 	});
 
-
-	console.log('Attempting mermaidJS init.');
+	console.log('Attempting mermaidJS initialization.');
 
 	// Standard Mermaid Initialization.
 	mermaid.initialize({ startOnLoad:true, theme: 'dark', htmlLabels: false, securityLevel: 'loose' });
 
 	// The default GH-Pages render pipeline corrupts our tags.
-	// So we manually look for the 'language-mermaid' corrupted tags and render them.
-	window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
+	// So we manually look for the 'language-mermaid' corrupted tags and render them.	
+	// If all goes well, our next deploy can remove this.
+	// window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
 
-	console.log('End attempt at mermaidJS init.');
+	console.log('End attempt at mermaidJS initialization.');
 }
 
 /*
