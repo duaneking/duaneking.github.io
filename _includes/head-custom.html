@@ -48,7 +48,7 @@ var loadCode = function(url, callback, location){
  */
 function do_mermaids_exist() {
 	var generatedSource = new XMLSerializer().serializeToString(document); // Yes, I know... I dislike this for perf reasons. But it works client side.
-	var mermaidsExist = generatedSource.includes(atob("PHByZT48Y29kZSBjbGFzcz0ibGFuZ3VhZ2UtbWVybWFpZCI+")); // Find the corrupted tags that show a mermaidJS tag was rendered by broken GH-P. This is a recursive check, so its base64 encoded initially.
+	var mermaidsExist = generatedSource.includes("class=\"language-mermaid"); // Find the corrupted tags that show a mermaidJS tag was rendered by broken GH-P.
 
 	console.log('Mermaids Exist: ' + mermaidsExist);
 
