@@ -1,6 +1,8 @@
 # About
 
-A picture is worth a thousand words.  Here is a flowchart I wrote in text.
+A picture is worth a thousand words.
+
+Here is a flowchart I wrote in text using MermaidJS:
 
 ```mermaid
 flowchart LR
