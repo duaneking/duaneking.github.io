@@ -47,13 +47,9 @@ var loadCode = function(url, callback, location){
  * This code is a hack that can only be fixed by GitHub on the server side in the default GitHub Pages rendering pipeline.
  */
 function do_mermaids_exist() {
-	var generatedSource = document.body.outerHTML;  // If the mermaid is not in the body, we don't see it.
-	var mermaidsExist = generatedSource.includes("language-mermaid"); // Find the tags that show a mermaidJS div was found.
-
-	console.log('Mermaids Exist: ' + mermaidsExist);
-	console.log('Source: ' + generatedSource);
-
-	return mermaidsExist;
+	// We cant check the body here.
+	
+	return true; // I want to believe.
 }
 
 /*
