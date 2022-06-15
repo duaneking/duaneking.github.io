@@ -61,7 +61,7 @@ var initMermaidJS = function() {
 	console.log('DOM fully loaded. Attempting mermaidJS init.');
 
 	// Standard Mermaid Initialization.
-	mermaid.initialize({ startOnLoad:true, theme: 'dark' });
+	mermaid.initialize({ startOnLoad:true, theme: 'dark', htmlLabels: false, securityLevel: 'loose' });
 
 	// The default GH-Pages render pipeline corrupts our tags.
 	// So we manually look for the 'language-mermaid' corrupted tags and render them.
