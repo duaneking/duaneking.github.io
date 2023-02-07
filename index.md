@@ -14,10 +14,54 @@ I just want this mermaidjs to render without me needing to edit .md files in a s
 I just want the following to render correctly on GitHub Pages with no changes to this index.md file itself. That's it. That is the use case.
 
 ```mermaid
-  graph TD;
-      A-->B;
-      A-->C;
-      B-->D;
-      C-->D;
+mindmap
+	id)Me(
+		Skills        
+			Electronics
+			Software
+				Programming
+                    	Languages
+                         	.Net
+                              	C#
+							F#
+							VB.Net
+						Python
+							Django
+							Flask
+						C
+							make
+						C++
+						Go (Golang)
+						HTML
+							CSS
+						JavaScript
+							TypeScript
+						Java
+							Java 8+/11+
+							Gradle
+							Maven
+                            Assembly
+                                i8080
+                                i8086
+                                i386
+                                i486
+                                i586
+                                i686
+                                AMD64
+					UI Design
+					Software Architecture
+						DevOps
+						CI/CD
+				Hardware
+					Embedded Systems
+					Electrical Engineering
+					Prior Breadboard Experience.
+				Fencing
+					Epee
+					Long Sword
+					Scottish Claymore
+
 ```
-Bottom of index.md
+
+
+Fin.
