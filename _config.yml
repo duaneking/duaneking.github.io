@@ -7,15 +7,18 @@ defaults:
       type: "authors"
     values:
       layout: "author"
+      author: "duane"
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
+      author: "duane"
   - scope:
       path: ""
     values:
       layout: "default"
+      author: "duane"
 title: duaneking.github.io
 github_username:  duaneking
 description: duaneking.github.io
