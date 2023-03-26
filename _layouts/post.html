@@ -8,8 +8,6 @@ layout: default
 {% assign author = site.authors | where: 'short_name', page.author | first %}
 {% if author %}
   <p class="view">by {{ page.author | default: site.author }} - <a href="{{ author.url }}">{{ author.name }}</a></p>
-{% else %}
-  <p class="view">by <a href="https://github.com/duaneking/">github.com/duaneking</a></p>
 {% endif %}
 
 {{content}}
