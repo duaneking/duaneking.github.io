@@ -1,6 +1,6 @@
 ---
 short_name: duane
-name: Duane F. King
-position: Principle Developer
+name: Duane
+position: Principle Software Developer
 ---
-Duane is an avid software developer based in Seattle.
+Duane is an avid software developer and general nerd based in Seattle.
