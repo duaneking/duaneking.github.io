@@ -12,6 +12,31 @@ layout: default
 
 {{content}}
 
+<hr>
+
 {% if page.tags %}
   <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
 {% endif %}
+
+<hr>
+
+{% if page.categories %}
+  <small>categories: <em>{{ page.categories | join: "</em> - <em>" }}</em></small>
+{% endif %}
+
+<hr>
+
+{% if page.previous %}
+  <a href="{{ page.previous.title }}">Previous Post</a>
+{% else %}
+  <a href="/">Home</a>
+{% endif %}
+
+&nbsp;|&nbsp;
+
+{% if page.next %}
+  <a href="{{ page.next.title }}">Next Post</a>
+{% else %}
+  <a href="/">Home</a>
+{% endif %}
+  
