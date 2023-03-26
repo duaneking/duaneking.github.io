@@ -7,7 +7,7 @@ layout: default
 
 {% assign author = site.authors | where: 'short_name', page.author | first %}
 {% if author %}
-  <p class="view">by {{ page.author | default: site.author }} - <a href="{{ author.url }}">{{ author.name }}</a></p>
+  <p class="view">by - <a href="{{ author.url }}">{{ author.name | default: site.author }}</a></p>
 {% endif %}
 
 {{content}}
