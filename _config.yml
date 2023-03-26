@@ -8,17 +8,20 @@ defaults:
     values:
       layout: "author"
       author: "duane"
+      excerpt_separator: <!--more-->
   - scope:
       path: ""
       type: "posts"
     values:
       layout: "post"
       author: "duane"
+      excerpt_separator: <!--more-->
   - scope:
       path: ""
     values:
       layout: "default"
       author: "duane"
+      excerpt_separator: <!--more-->
 title: duaneking.github.io
 github_username:  duaneking
 description: duaneking.github.io

@@ -7,7 +7,7 @@ categories: mermaid
 
 # Welcome
 
-**Hello world**, this is my first blog post as I sort through Jekyll now that I have mermaid working.
+**Hello world**, this is my first blog post as I sort through Jekyll now that I have mermaid working.<!--more-->
 
 
 ```mermaid
