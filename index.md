@@ -1,10 +1,10 @@
-## Welcome to duaneking.GitHub.io
+## Welcome
 
-<ol>
-{% for post in site.posts %}
-<li><a href="{{ post.url }}">{{ post.title }}</a><p>{{ post.description }}</p></li>
-{% endfor %}
-</ol>
-
+<dl>
+  {% for post in site.posts %}
+  <dt><b><a href="{{ post.url }}">{{ post.title }} - {{ post.description }}</a></b></dt>
+  <dd><p>{{ post.excerpt }}</p></dd>
+  {% endfor %}
+</dl>
 
 Fin.
